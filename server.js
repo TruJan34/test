@@ -2,8 +2,8 @@ const express = require('express')
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const path = require('path');
-
-
+const cors = require('cors')
+const axios = require('axios')
 const webpack = require('webpack');
 const webpackConfig = require('./webpack.config');
 const webpackDevMiddleware = require('webpack-dev-middleware');
@@ -44,7 +44,15 @@ app.use(webpackHotMiddleware(webpackCompiler, {
   log: console.log,
 }));
 
+app.use(cors())
+var axData = []
+axios.get('https://s3.ap-south-1.amazonaws.com/scapic-others/json/models.json')
+        .then(response => {
+          console.log(response.data.categories[0].models)})
 
+app.get('/api/data', (req, res) => {
+  res.json(daata)
+})
 // ---- use routes----
 app.use('/*', index);
 

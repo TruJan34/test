@@ -9,7 +9,8 @@ import Homes from '../Components/Grid/Homes/Homes'
 function mapStateToProps(state) {
   return{
     posts: state.posts,
-    comments: state.comments
+    comments: state.comments,
+    test: state.test
   }
 }
 

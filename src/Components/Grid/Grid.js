@@ -3,6 +3,7 @@ import Photo from '../Photo/Photo'
 var Carousel = require('nuka-carousel');
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import Footer from '../Shared/Footer/Footer'
+import axios from 'axios'
 
 
 
@@ -14,7 +15,16 @@ class Grid extends Component {
     super(props)
   }  
 
-  render() {    
+  render() {        
+
+        // axios.get('https://s3.ap-south-1.amazonaws.com/scapic-others/json/models.json')
+        // .then(response =>{
+        // console.log(response.data)
+        // })
+        // .catch(error =>{
+        // console.log(error);
+        // })
+    
     return(
       <div className="main-slide">
       {/* Food */}
