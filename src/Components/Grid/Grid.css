@@ -1,0 +1,20 @@
+.food {
+  padding-top: 50px;
+}
+
+.trees{
+  padding: 40px;
+}
+
+.homes{
+  padding: 40px;
+}
+
+h4, h1{
+  text-align: center;
+}
+
+.pagination{  
+  width: 40%;
+  margin: 0 auto;
+}
