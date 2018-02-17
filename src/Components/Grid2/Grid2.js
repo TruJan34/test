@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Photo from '../Photo/Photo'
-import FoodPhoto2 from '../Photo/FoodPhoto2';
+import FurniturePhoto from '../Photo/FurniturePhoto/FunrniturePhoto';
+import NaturePhoto from '../Photo/NaturePhoto/NaturePhoto';
 var Carousel = require('nuka-carousel');
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import Footer from '../Shared/Footer/Footer'
@@ -10,36 +10,32 @@ import axios from 'axios'
 
 
 // css
-import './Grid.css'
+import './Grid2.css'
 
-class Grid extends Component {
+class Grid2 extends Component {
   constructor(props) {
     super(props)
   }  
 
-  render() {  
-    const test = this.props.animals.map((animals) => animals)
-    console.log(test)
-    const test2 = this.props.foods.map((foods) => foods)
-    console.log(test2)
+  render() {      
     return(
       <div className="main-slide">
 
       {/* Animals */}
-        <div className="animal">
+        <div className="furniture">
         <h1>3D Models</h1>          
           <Carousel>
-            {this.props.animals.map((animal) => 
-              <Photo {...this.props.animals}  animal={animal}/>           
+            {this.props.furniture.map((furniture) => 
+              <FurniturePhoto {...this.props.furniture}  furniture={furniture}/>           
               )}
           </Carousel>          
         </div>
         
-        {/* Foods */}
-        <div className="food">        
+        {/* Nature */}
+        <div className="nature">        
           <Carousel>
-            {this.props.foods.map((food) => 
-              <FoodPhoto2 {...this.props.foods}  food={food}/>           
+            {this.props.nature.map((nature) => 
+              <NaturePhoto {...this.props.nature}  nature={nature}/>           
               )}
           </Carousel>          
         </div>
@@ -89,4 +85,4 @@ class Grid extends Component {
   }
 }
 
-export default Grid;
+export default Grid2;

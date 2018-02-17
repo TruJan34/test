@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 // CSS
-import './Photo.css';
+// import './Photo.css';
 
-class Photo extends Component {
+class FoodPhoto2 extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {   
-    const { animal} = this.props;
+    const { food } = this.props;
     // const { food } = this.props;
     
     
@@ -35,10 +35,10 @@ class Photo extends Component {
               <img src={animal.thumb} />               
             </div>            
             </Link>             */}
-            <p>{animal.name}</p>
-              <Link to={`/view/${animal.name}`}>
+            <p>{food.name}</p>
+              <Link to={`/view/${food.name}`}>
             <div className="slide-objects">              
-              <img src={animal.thumb} />               
+              <img src={food.thumb} />               
             </div>            
             </Link>  
             
@@ -49,4 +49,4 @@ class Photo extends Component {
   }
 }
 
-export default Photo;
+export default FoodPhoto2;

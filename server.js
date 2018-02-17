@@ -45,14 +45,38 @@ app.use(webpackHotMiddleware(webpackCompiler, {
 }));
 
 app.use(cors())
-var axData = []
+
+var categories = []
 axios.get('https://s3.ap-south-1.amazonaws.com/scapic-others/json/models.json')
         .then(response => {
-          console.log(response.data.categories[0].models)})
-
+          // response.data.categories[0].models.forEach((e) => {animals.push(e)})})
+          response.data.categories.forEach((e) => {
+            categories.push(e)
+          })})
+          
 app.get('/api/data', (req, res) => {
-  res.json(daata)
+  res.send(categories)
 })
+
+app.get('/api/data/animals', (req, res) => {
+  res.send(categories[0])
+})
+app.get('/api/data/foods', (req, res) => {
+  res.send(categories[1])
+})
+app.get('/api/data/furniture', (req, res) => {
+  res.send(categories[2])
+})
+app.get('/api/data/nature', (req, res) => {
+  res.send(categories[3])
+})
+app.get('/api/data/technology', (req, res) => {
+  res.send(categories[4])
+})
+app.get('/api/data/transport', (req, res) => {
+  res.send(categories[5])
+})
+
 // ---- use routes----
 app.use('/*', index);
 

@@ -10,28 +10,21 @@ import { Provider } from 'react-redux';
 // Components
 import HeaderNavbar from './Components/Shared/Navbar/HeaderNavbar';
 import HomePage from './Components/Home/HomePage'
-import Grid from './Components/Grid/Grid';
 import Single from './Components/Single/Single';
 import Store from './Store/index';
-import Footer from './Components/Shared/Footer/Footer';
 import About from './Components/About/About';
 
-// Obj
-import Homes from './Components/Grid/Homes/Homes';
 
 // CSS
 import './App.css'
-
-
 // 
 import Obj from './Components/Obj/Obj'
 
-// App
-import StoreApp from './Components/StoreApp'
-
-//
-import {HomesStore} from './Components/StoreApp';
-
+// App/Grid1,2,3,Single
+import StoreApp from './Components/StoreApp';
+import {Grid2StoreApp} from './Components/StoreApp'; //*imp{}
+import {Grid3StoreApp} from './Components/StoreApp';
+import {SingleStoreApp} from './Components/StoreApp';
 
 class App extends Component {
   constructor(props) {
@@ -47,11 +40,12 @@ class App extends Component {
         <HeaderNavbar/>          
           <Switch>
             <Route exact path='/' component={StoreApp} />
-            <Route path ='/g' component={Grid} />
-            <Route path='/view/:postId' component={Single} />
+            <Route path='/gridtwo' component={Grid2StoreApp} />
+            <Route path='/gridthree' component={Grid3StoreApp} />
+            
+            <Route path='/view/:postId' component={SingleStoreApp} />
 
-            <Route path="/obj" component={Obj} />
-            <Route path="/homes" component={HomesStore} />
+            <Route path="/obj" component={Obj} />            
             <Route path="/about" component={About} />
             
             Add all route above this line

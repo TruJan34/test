@@ -1,7 +1,6 @@
 import { combineReducers, createStore } from 'redux';
 import axios from 'axios';
 
-var apiURL = 'https://s3.ap-south-1.amazonaws.com/scapic-others/json/models.json'
 
 // RootReducer
 import rootReducer from '../Reducers/indexReducer';
@@ -9,17 +8,57 @@ import rootReducer from '../Reducers/indexReducer';
 // Data OR API Call
 import comments from '../data/comments'
 import posts from '../data/posts';
-// import test from '../data/test';
+import test from '../data/test';
+import animals from '../data/animals';
+import foods from '../data/foods';
+import furniture from '../data/furniture';
+import nature from '../data/nature';
+import technology from '../data/technology';
+import transport from '../data/transport';
 
 // scapic api
+// working: true
+
+
+// animals, food, furniture, nature, technology, transport
+// var categoriess = []
+// var animals = []
+    
+// axios.get('http://localhost:3000/api/data')
+// .then(response => {
+  
+//   response.data.forEach((e) => {
+//     categoriess.push(e)
+//   })
+// })
+
+// axios.get('http://localhost:3000/api/data/animals').then(res => {
+//   res.data.models.forEach((e) => { animals.push(e)})
+// })
+
+// axios.get('http://localhost:3000/api/data/animals').then(res => {
+//   animals.push(res.data)
+// })
+// animals.forEach((e) => console.log(e))
+
+
 
 
 const defaultState = {
   posts: posts,
-  comments: comments,
-  // test: test,
+  comments: comments,  
+  animals: animals,
+  foods: foods,
+  furniture: furniture,
+  nature: nature,
+  technology: technology,
+  transport: transport
+  
 }
 
-const Store = createStore(rootReducer, defaultState)
+const Store = createStore(rootReducer, defaultState) // passing state to reducer
 
 export default Store;
+
+
+// $r.props.categoriess[0].forEach(e => {console.log(e.thumb)})

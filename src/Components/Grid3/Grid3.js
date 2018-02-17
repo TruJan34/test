@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Photo from '../Photo/Photo'
-import FoodPhoto2 from '../Photo/FoodPhoto2';
+import TechnologyPhoto from '../Photo/TechnologyPhoto/TechnologyPhoto';
+import TransportPhoto from '../Photo/TransportPhoto/TransportPhoto';
 var Carousel = require('nuka-carousel');
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import Footer from '../Shared/Footer/Footer'
@@ -10,36 +10,32 @@ import axios from 'axios'
 
 
 // css
-import './Grid.css'
+import './Grid3.css'
 
-class Grid extends Component {
+class Grid3 extends Component {
   constructor(props) {
     super(props)
   }  
 
-  render() {  
-    const test = this.props.animals.map((animals) => animals)
-    console.log(test)
-    const test2 = this.props.foods.map((foods) => foods)
-    console.log(test2)
+  render() {      
     return(
       <div className="main-slide">
 
       {/* Animals */}
-        <div className="animal">
+        <div className="technology">
         <h1>3D Models</h1>          
           <Carousel>
-            {this.props.animals.map((animal) => 
-              <Photo {...this.props.animals}  animal={animal}/>           
+            {this.props.technology.map((technology) => 
+              <TechnologyPhoto {...this.props.technology}  technology={technology}/>           
               )}
           </Carousel>          
         </div>
         
-        {/* Foods */}
-        <div className="food">        
+        {/* Transport */}
+        <div className="transport">        
           <Carousel>
-            {this.props.foods.map((food) => 
-              <FoodPhoto2 {...this.props.foods}  food={food}/>           
+            {this.props.transport.map((transport) => 
+              <TransportPhoto {...this.props.transport}  transport={transport}/>           
               )}
           </Carousel>          
         </div>
@@ -89,4 +85,4 @@ class Grid extends Component {
   }
 }
 
-export default Grid;
+export default Grid3;
